@@ -1,0 +1,48 @@
+* {
+
+    margin: 0;
+
+}
+
+/*
+map styles
+*/
+
+#mapid { 
+
+    height: 100vh; 
+    z-index: 0;
+
+}
+
+/*
+close botton styles
+*/
+
+#close-botton {
+
+    position: fixed;
+    margin-top: 1vw;
+    margin-left: 90vw;
+    height: 4em;
+    width: 4em;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+
+}
+
+/*
+sector stats styles
+*/
+
+#sector-stats {
+    position: fixed;
+    width: 30vw;
+    height: 100vh;
+    z-index: 2;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0;
+    left: 0;
+}
