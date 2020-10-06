@@ -10,11 +10,52 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
+    <div id="load-screen">
+        <img src="../../img/icons/load.svg" alt="">
+    </div>
+    <div id="views">
+      <p id="view-1" class="actived">SECTORES</p>
+      <p id="view-2">GENERAL</p>
+      <p id="view-3">COMPARAR</p>
+    </div>
     <img src="img/icons/close.svg" alt="close-botton" id="close-botton">
-    <div id="sector-stats"></div>
+    <div id="sector-stats" class="hide-stats">
+      <canvas id="chart"></canvas>
+      <div id="sector-data">
+        <p id="sector-location"></p>
+        <p id="sector-id">ID: </p>
+        <p id="sector-avg">Media: </p>
+        <p id="sector-median">Mediana: </p>
+        <p id="sector-max">Maximo: </p>
+        <p id="sector-min">Minimo: </p>
+        <p id="sector-variance">Varianza: </p>
+      </div>
+    </div>
+    <div id="repro-container">
+      <div id="repro-controls">
+          <img src="./img/icons/reverse.svg" id="reverse" alt="">
+          <img src="./img/icons/pause.svg" class="hide" id="pause" alt="">
+          <img src="./img/icons/play.svg" id="play"alt="">
+          <img src="./img/icons/stop.svg" id="stop" alt="">
+          <img src="./img/icons/step.svg" id="step" alt="">
+          <select id="speedTime">
+            <option value="15">x0.25</option>
+            <option value="10" selected>x1</option>
+            <option value="5">x1.75</option>
+          </select>
+          <div id="repro-date">
+          </div>
+      </div>
+      <table id="reproductor">
+        <tr><td></td></tr>
+      </table>
+    </div>
     <!--Map Div-->
     <div id="mapid"></div>
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot@2.3.0/build/Chart.BoxPlot.min.js"></script>
+
     <script 
     src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="

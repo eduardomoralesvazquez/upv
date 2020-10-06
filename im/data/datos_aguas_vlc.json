@@ -164,15 +164,6 @@
         },
         {
             "Fecha": 43963,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.65138888888889,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 196153,
-            "Unidades": "UG/L",
-            "Resultado (log)": 5.292594955
-        },
-        {
-            "Fecha": 43963,
             "Ubicacion": "VALENCIA. N0. P010 COLECTOR BENIMAMET (JUNTO BCO. ENDOLÇA).",
             "Hora": 0.62847222222222,
             "Análisis": "SARS-Cov-2",
@@ -364,15 +355,6 @@
             "Fecha": 43965,
             "Ubicacion": "VALENCIA. N0. P012 COLECTOR SUR TRANSITOS (AVD. PEREZ GALDOS).",
             "Hora": 0.54166666666667,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 43965,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.53125,
             "Análisis": "SARS-Cov-2",
             "Resultado": 0,
             "Unidades": "UG/L",
@@ -577,15 +559,6 @@
             "Resultado (log)": 0
         },
         {
-            "Fecha": 43967,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.525,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
             "Fecha": 43970,
             "Ubicacion": "VALENCIA. N0. P004 ESTACION DE BOMBEO IBIZA.",
             "Hora": 0.42777777777778,
@@ -755,15 +728,6 @@
             "Resultado": 106123,
             "Unidades": "UG/L",
             "Resultado (log)": 5.025809519
-        },
-        {
-            "Fecha": 43970,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.56319444444444,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
         },
         {
             "Fecha": 43970,
@@ -973,15 +937,6 @@
             "Resultado (log)": 4.836317785
         },
         {
-            "Fecha": 43972,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.51944444444444,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 38076,
-            "Unidades": "UG/L",
-            "Resultado (log)": 4.580651318
-        },
-        {
             "Fecha": 43974,
             "Ubicacion": "VALENCIA. N0. P001 ESTACION DE BOMBEO MALVARROSA.",
             "Hora": 0.40138888888889,
@@ -1120,15 +1075,6 @@
             "Fecha": 43974,
             "Ubicacion": "VALENCIA. N0. P017 COLECTOR RONDA SUR (CRUCE SAN VICENTE).",
             "Hora": 0.50416666666667,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 43974,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.56388888888889,
             "Análisis": "SARS-Cov-2",
             "Resultado": 0,
             "Unidades": "UG/L",
@@ -1352,15 +1298,6 @@
         },
         {
             "Fecha": 43977,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.61666666666667,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 43977,
             "Ubicacion": "VALENCIA. N0. P013 COLECTOR RONTA (CONDE SALVATIERRA).",
             "Hora": 0.50902777777778,
             "Análisis": "SARS-Cov-2",
@@ -1567,15 +1504,6 @@
             "Resultado (log)": 0
         },
         {
-            "Fecha": 43979,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.55,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
             "Fecha": 43981,
             "Ubicacion": "VALENCIA. N0. P006 COLECTOR CARDENAL BENLLOÇ - EDUARDO BOSCA (RÍO).",
             "Hora": 0.34861111111111,
@@ -1765,15 +1693,6 @@
             "Resultado (log)": 0
         },
         {
-            "Fecha": 43981,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.59097222222222,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
             "Fecha": 43984,
             "Ubicacion": "VALENCIA. N0. P007 COLECTOR AVENIDA DE SUECIA.",
             "Hora": 0.52777777777778,
@@ -1939,15 +1858,6 @@
             "Fecha": 43984,
             "Ubicacion": "VALENCIA. N0. P016 COLECTOR CALLE LORCA.",
             "Hora": 0.56875,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 43984,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.58125,
             "Análisis": "SARS-Cov-2",
             "Resultado": 0,
             "Unidades": "UG/L",
@@ -2144,15 +2054,6 @@
         },
         {
             "Fecha": 43986,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.58125,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 43986,
             "Ubicacion": "VALENCIA. N0. P013 COLECTOR RONTA (CONDE SALVATIERRA).",
             "Hora": 0.48611111111111,
             "Análisis": "SARS-Cov-2",
@@ -2317,15 +2218,6 @@
             "Fecha": 43988,
             "Ubicacion": "VALENCIA. N0. P014 COLECTOR C/ SAN VICENTE (FRENTE CORREOS).",
             "Hora": 0.54652777777778,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 43988,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.58472222222222,
             "Análisis": "SARS-Cov-2",
             "Resultado": 0,
             "Unidades": "UG/L",
@@ -2965,15 +2857,6 @@
             "Fecha": 43997,
             "Ubicacion": "VALENCIA. N0. P012 COLECTOR SUR TRANSITOS (AVD. PEREZ GALDOS).",
             "Hora": 0.55,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 43997,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.56319444444444,
             "Análisis": "SARS-Cov-2",
             "Resultado": 0,
             "Unidades": "UG/L",
@@ -3809,15 +3692,6 @@
         },
         {
             "Fecha": 44013,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.5395833333333333,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 44013,
             "Ubicacion": "VALENCIA. N0. P010 COLECTOR BENIMAMET (JUNTO BCO. ENDOLÇA).",
             "Hora": 0.548611111111111,
             "Análisis": "SARS-Cov-2",
@@ -4027,15 +3901,6 @@
             "Fecha": 44015,
             "Ubicacion": "VALENCIA. N0. P014 COLECTOR C/ SAN VICENTE (FRENTE CORREOS).",
             "Hora": 0.5194444444444445,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 44015,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.5472222222222222,
             "Análisis": "SARS-Cov-2",
             "Resultado": 0,
             "Unidades": "UG/L",
@@ -4367,15 +4232,6 @@
         },
         {
             "Fecha": 44020,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.5604166666666667,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 44020,
             "Ubicacion": "VALENCIA. N0. P014 COLECTOR C/ SAN VICENTE (FRENTE CORREOS).",
             "Hora": 0.5326388888888889,
             "Análisis": "SARS-Cov-2",
@@ -4576,15 +4432,6 @@
             "Fecha": 44022,
             "Ubicacion": "VALENCIA. N0. P002 COLECTOR CANTARRANAS (FRENTE A CUARTEL G.C).",
             "Hora": 0.34930555555555554,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 44022,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.5604166666666667,
             "Análisis": "SARS-Cov-2",
             "Resultado": 0,
             "Unidades": "UG/L",
@@ -4898,15 +4745,6 @@
         },
         {
             "Fecha": 44027,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.6541666666666667,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 38922,
-            "Unidades": "UG/L",
-            "Resultado (log)": 4.590195148
-        },
-        {
-            "Fecha": 44027,
             "Ubicacion": "VALENCIA. N0. P012 COLECTOR SUR TRANSITOS (AVD. PEREZ GALDOS).",
             "Hora": 0.6347222222222222,
             "Análisis": "SARS-Cov-2",
@@ -5213,15 +5051,6 @@
         },
         {
             "Fecha": 44029,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.6034722222222222,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 0,
-            "Unidades": "UG/L",
-            "Resultado (log)": 0
-        },
-        {
-            "Fecha": 44029,
             "Ubicacion": "VALENCIA. N0. P013 COLECTOR RONTA (CONDE SALVATIERRA).",
             "Hora": 0.513888888888889,
             "Análisis": "SARS-Cov-2",
@@ -5336,15 +5165,6 @@
             "Resultado": 312783,
             "Unidades": "UG/L",
             "Resultado (log)": 5.495243141
-        },
-        {
-            "Fecha": 44032,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.6006944444444444,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 299350,
-            "Unidades": "UG/L",
-            "Resultado (log)": 5.476179262
         },
         {
             "Fecha": 44032,
@@ -5534,15 +5354,6 @@
             "Resultado": 37700,
             "Unidades": "UG/L",
             "Resultado (log)": 4.57634135
-        },
-        {
-            "Fecha": 44034,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.62083333333333,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 2310425,
-            "Unidades": "UG/L",
-            "Resultado (log)": 6.363691875
         },
         {
             "Fecha": 44034,
@@ -5870,15 +5681,6 @@
         },
         {
             "Fecha": 44036,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.54166666666667,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 572052,
-            "Unidades": "UG/L",
-            "Resultado (log)": 5.757435508
-        },
-        {
-            "Fecha": 44036,
             "Ubicacion": "VALENCIA. N0. P012 COLECTOR SUR TRANSITOS (AVD. PEREZ GALDOS).",
             "Hora": 0.55902777777778,
             "Análisis": "SARS-Cov-2",
@@ -6104,15 +5906,6 @@
         },
         {
             "Fecha": 44039,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.49791666666667,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 72364,
-            "Unidades": "UG/L",
-            "Resultado (log)": 4.859522565
-        },
-        {
-            "Fecha": 44039,
             "Ubicacion": "VALENCIA. N0. P010 COLECTOR BENIMAMET (JUNTO BCO. ENDOLÇA).",
             "Hora": 0.53194444444444,
             "Análisis": "SARS-Cov-2",
@@ -6220,15 +6013,6 @@
             "Resultado (log)": 6.80338179
         },
         {
-            "Fecha": 44053,
-            "Ubicacion": "VALENCIA. N0. P001 ESTACION DE BOMBEO MALVARROSA.",
-            "Hora": 0.3576388888888889,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 2723852,
-            "Unidades": "UG/L",
-            "Resultado (log)": 6.435183507
-        },
-        {
             "Fecha": 44041,
             "Ubicacion": "VALENCIA. N0. P001 ESTACION DE BOMBEO MALVARROSA.",
             "Hora": 0.42430555555556,
@@ -6299,15 +6083,6 @@
             "Resultado": 979688,
             "Unidades": "UG/L",
             "Resultado (log)": 5.991087788
-        },
-        {
-            "Fecha": 44041,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.54861111111111,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 272090,
-            "Unidades": "UG/L",
-            "Resultado (log)": 5.434712581
         },
         {
             "Fecha": 44041,
@@ -6527,15 +6302,6 @@
         },
         {
             "Fecha": 44043,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.66736111111111,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 410066,
-            "Unidades": "UG/L",
-            "Resultado (log)": 5.612853762
-        },
-        {
-            "Fecha": 44043,
             "Ubicacion": "VALENCIA. N0. P010 COLECTOR BENIMAMET (JUNTO BCO. ENDOLÇA).",
             "Hora": 0.67708333333333,
             "Análisis": "SARS-Cov-2",
@@ -6743,15 +6509,6 @@
         },
         {
             "Fecha": 44046,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.55486111111111,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 133402,
-            "Unidades": "UG/L",
-            "Resultado (log)": 5.125162341
-        },
-        {
-            "Fecha": 44046,
             "Ubicacion": "VALENCIA. N0. P010 COLECTOR BENIMAMET (JUNTO BCO. ENDOLÇA).",
             "Hora": 0.55555555555556,
             "Análisis": "SARS-Cov-2",
@@ -6941,15 +6698,6 @@
         },
         {
             "Fecha": 44048,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.5,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 2453057,
-            "Unidades": "UG/L",
-            "Resultado (log)": 6.38970764
-        },
-        {
-            "Fecha": 44048,
             "Ubicacion": "VALENCIA. N0. P013 COLECTOR RONTA (CONDE SALVATIERRA).",
             "Hora": 0.375,
             "Análisis": "SARS-Cov-2",
@@ -7082,15 +6830,6 @@
             "Resultado": 4328118,
             "Unidades": "UG/L",
             "Resultado (log)": 6.636299093
-        },
-        {
-            "Fecha": 44050,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.5243055555555556,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 5189442,
-            "Unidades": "UG/L",
-            "Resultado (log)": 6.715120662
         },
         {
             "Fecha": 44050,
@@ -7283,6 +7022,15 @@
         },
         {
             "Fecha": 44053,
+            "Ubicacion": "VALENCIA. N0. P001 ESTACION DE BOMBEO MALVARROSA.",
+            "Hora": 0.3576388888888889,
+            "Análisis": "SARS-Cov-2",
+            "Resultado": 2723852,
+            "Unidades": "UG/L",
+            "Resultado (log)": 6.435183507
+        },
+        {
+            "Fecha": 44053,
             "Ubicacion": "VALENCIA. N0. P002 COLECTOR CANTARRANAS (FRENTE A CUARTEL G.C).",
             "Hora": 0.3506944444444444,
             "Análisis": "SARS-Cov-2",
@@ -7361,15 +7109,6 @@
             "Resultado": 691702,
             "Unidades": "UG/L",
             "Resultado (log)": 5.839919031
-        },
-        {
-            "Fecha": 44053,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.53125,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 3284074,
-            "Unidades": "UG/L",
-            "Resultado (log)": 6.516412935
         },
         {
             "Fecha": 44053,
@@ -7594,14 +7333,6 @@
         },
         {
             "Fecha": 44055,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.53819444444444,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 1367350,
-            "Resultado (log)": 6.135879695
-        },
-        {
-            "Fecha": 44055,
             "Ubicacion": "VALENCIA. N0. P013 COLECTOR RONTA (CONDE SALVATIERRA).",
             "Hora": 0.37847222222222,
             "Análisis": "SARS-Cov-2",
@@ -7807,15 +7538,6 @@
         },
         {
             "Fecha": 44057,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.524305555555556,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 106337,
-            "Unidades": "UG/L",
-            "Resultado (log)": 5.026684404
-        },
-        {
-            "Fecha": 44057,
             "Ubicacion": "VALENCIA. N0. P016 COLECTOR CALLE LORCA.",
             "Hora": 0.493055555555556,
             "Análisis": "SARS-Cov-2",
@@ -7993,15 +7715,6 @@
             "Resultado": 265830,
             "Unidades": "UG/L",
             "Resultado (log)": 5.424603991
-        },
-        {
-            "Fecha": 44060,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.54861111111111,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 2004646,
-            "Unidades": "UG/L",
-            "Resultado (log)": 6.302037692
         },
         {
             "Fecha": 44060,
@@ -8209,15 +7922,6 @@
             "Resultado": 277247,
             "Unidades": "UG/L",
             "Resultado (log)": 5.442866855
-        },
-        {
-            "Fecha": 44062,
-            "Ubicacion": "VALENCIA. N0. P011 COLECTOR BENIFERRI (JUNTO CAMPO FUTBOL).",
-            "Hora": 0.55902777777778,
-            "Análisis": "SARS-Cov-2",
-            "Resultado": 1780153,
-            "Unidades": "UG/L",
-            "Resultado (log)": 6.250457331
         },
         {
             "Fecha": 44062,
