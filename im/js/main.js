@@ -22,8 +22,16 @@ let sectorAvg = document.getElementById("sector-avg");
 let sectorMedian = document.getElementById("sector-median");
 let sectorMax = document.getElementById("sector-max");
 let sectorMin = document.getElementById("sector-min");
-let sectorVariance = document.getElementById("sector-variance");
+let sectorTD = document.getElementById("sector-td");
+let sectorQ1 = document.getElementById("sector-q1");
+let sectorQ3 = document.getElementById("sector-q3");
 let ctx = document.getElementById("chart").getContext("2d");
+let btnBoxplot = document.getElementById("btn-boxplot");
+let sectorBtn = document.getElementById("sector-btn");
+let fechaBtn = document.getElementById("fecha-btn");
+
+sectorBtn.addEventListener("click", (e)=>{changeBoxplot(e)})
+fechaBtn.addEventListener("click", (e)=>{changeBoxplot(e)})
 
 //map
 
@@ -117,6 +125,7 @@ requestJson.onreadystatechange = function(){
             }
         });
         drawTimeLine();
+
     }
 
 }
@@ -159,6 +168,7 @@ function createGeoLayer(geoData){
             fillOpacity: 0.7
         });
         L.DomEvent.on(layer, "click", (e)=>{
+            activeLayer = layer;
             displaySectorStats(true);
             if(currentView == 1){
                 setViewTo(layer.getCenter()["lat"], layer.getCenter()["lng"]-0.045, 13.5);
@@ -168,14 +178,17 @@ function createGeoLayer(geoData){
                         fillOpacity:1
                 });
             }
-            if(currentView!=3){
+            if( currentView != 3){
                 layers.eachLayer((layerb)=>{
-                    layerb.setStyle({
+                    if(layerb != activeLayer){
+                  
+                        layerb.setStyle({
                         fillOpacity:0.7
-                    });
-                })
+                        });
+
+                    }
+                });
             }
-            activeLayer = layer;
             if(currentView == 3){
                 if(activeLayers.includes(layer.feature.id)){
                     removeDataToChart(layer.feature.id);
@@ -298,8 +311,12 @@ function parseDate(excelDate){
 
 function drawStats(layer){
     
-    if(chart!=null)
+    if(chart!=null){
+    
         chart.destroy();
+        chart = null;
+
+    }
 
     let sectorData = data[0].filter((element)=>{ return element.Ubicacion == layer.feature.id; });
     let results = sectorData.map((element)=>{ return element.Resultado;});
@@ -308,7 +325,9 @@ function drawStats(layer){
     let dates = sectorData.map((element)=>{ return element.Fecha;});
     let media = getAvg(results);
     let median = getMedian(results);
-    let variance = getVariance(results);
+    let tD= getTD(results);
+    let q1= getQ1(results);
+    let q3= getQ3(results);
 
 
     if(currentView == 1){
@@ -317,7 +336,9 @@ function drawStats(layer){
         sectorMin.innerHTML = "Minimo: "+ Math.min.apply(Math, results) +" UG/L";
         sectorAvg.innerHTML = "Media: "+ media.toFixed(3) +" UG/L";
         sectorMedian.innerHTML = "Mediana: "+ median +" UG/L";
-        sectorVariance.innerHTML = "Varianza: "+ variance.toFixed(3) + " UG/L";
+        sectorTD.innerHTML = "Desviación Tipica: "+ tD.toFixed(3) + " UG/L";
+        sectorQ1.innerHTML = "Q1: "+ q1.toFixed(3) + " UG/L";
+        sectorQ3.innerHTML = "Q3: "+ q3.toFixed(3) + " UG/L";
     
         sectorId.innerHTML = "ID: "+layer.feature.id;
         sectorLocation.innerHTML = layer.feature.properties.Descripcion;
@@ -337,6 +358,11 @@ function drawStats(layer){
                         label: 'Media (General)',
                         borderColor: 'rgba(0,110,0,0.7)',
                         data: getGeneralAvg(sectorData)
+                    },
+                    {
+                        label: 'Mediana (General)',
+                        borderColor: 'rgba(0,0,210,0.7)',
+                        data: getGeneralMedian(sectorData)
                     }
                 ]
             },
@@ -358,11 +384,11 @@ function drawStats(layer){
                 },
                 elements: {
                     line: {
-                        borderWidth: 6,
+                        borderWidth: 4,
                         fill: false
                     },
                     point: {
-                        radius: 6,
+                        radius: 5,
                         borderWidth: 1,
                         backgroundColor: "white",
                         hoverRadius: 8,
@@ -378,9 +404,6 @@ function drawStats(layer){
 }
 
 function drawChart2(){
-
-    if(chart!=null)
-        chart.destroy
     if(currentView == 2){
 
         chart = new Chart(ctx, {
@@ -427,15 +450,15 @@ function drawChart2(){
         sectorLocation.innerHTML = "Estadísticos Muestrales";
         sectorAvg.innerHTML = "Media: "+ getAvg(results).toFixed(3) +" UG/L";
         sectorMedian.innerHTML = "Mediana: "+ getMedian(results) +" UG/L";
-        sectorVariance.innerHTML = "Varianza: "+ getVariance(results).toFixed(3) + " UG/L";
+        sectorTD.innerHTML = "Desviación típica: "+ getTD(results).toFixed(3) + " UG/L";
+        sectorQ1.innerHTML = "Q1 : "+ getQ1(results).toFixed(3) + " UG/L";
+        sectorQ3.innerHTML = "Q3 : "+ getQ3(results).toFixed(3) + " UG/L";
 
     }
 }
 
 function drawChart3(){
     let dates = getDays().map((e)=>{ return new Date(e)});
-    if(chart!=null)
-        chart.destroy
     if(currentView == 3){
 
         
@@ -492,23 +515,57 @@ function getMedian(array){
         return copyArray[0];
 
     if(length%2){
-        return copyArray[Math.ceil(length/2)];
+        return copyArray[Math.ceil(length/2)-1];
     }else{
         let median = (copyArray[length/2-1]+copyArray[length/2])/2;
         return median;
     }
 
 }
+function getQ1(array){
+    
+    let copyArray = array;
+    copyArray.sort((a,b)=>a-b);
+    let length = copyArray.length;
 
+    if(length == 1)
+        return copyArray[0];
+
+    if(length*0.25%1){
+        return copyArray[Math.ceil(length*0.25)-1];
+    }else{
+        let median = (copyArray[length*0.25-1]+copyArray[length*0.25])/2;
+        return median;
+    }
+
+}
+
+function getQ3(array){
+
+    let copyArray = array;
+    copyArray.sort((a,b)=>a-b);
+    let length = copyArray.length;
+
+    if(length == 1)
+        return copyArray[0];
+
+    if(length*0.75%1){
+        return copyArray[Math.ceil(length*0.75)-1];
+    }else{
+        let median = (copyArray[length*0.75-1]+copyArray[length*0.75])/2;
+        return median;
+    }
+
+}
 function getAvg(array){
 
     return array.reduce((accu, current)=> accu+current)/array.length;
 
 }
 
-function getVariance(array){
+function getTD(array){
 
-    let variance;
+    let tD;
     let media = getAvg(array);
     let total = 0;
     array.forEach(element => {
@@ -516,8 +573,8 @@ function getVariance(array){
         total += element**2;
 
     });
-    variance = (total/(array.length))-media**2;
-    return variance;
+    tD = (total/(array.length))-media**2;
+    return Math.sqrt(tD);
 
 }
 
@@ -525,7 +582,7 @@ function getVariance(array){
 function getGeneralAvg(sector){
 
     let generalAvg = [];
-    let dataPerDate = groupByDate();
+    let dataPerDate = groupByDateSum();
     for(let i = 0; i<sector.length; i++){
         for(let f = 0; f<dataPerDate.length; f++){
             if(sector[i].Fecha.getTime() == dataPerDate[f].date.getTime()){
@@ -534,8 +591,23 @@ function getGeneralAvg(sector){
         }
     }
     return generalAvg;
+    
 }
-function groupByDate(){
+function getGeneralMedian(sector){
+
+    let generalMedian = [];
+    let dataPerDate = groupByDateArray();
+    for(let i = 0; i<sector.length; i++){
+        for(let f = 0; f<dataPerDate.length; f++){
+            if(sector[i].Fecha.getTime() == dataPerDate[f].date.getTime()){
+                generalMedian.push(getMedian(dataPerDate[f].data));
+            }
+        }
+    }
+    return generalMedian;
+    
+}
+function groupByDateSum(){
     
     let days = getDays();
     let same = [];
@@ -567,6 +639,43 @@ function groupByDate(){
         };
         for(let f = 0; f<dataPerDate[i].length; f++){
             resultLogPerDate[i].sum += dataPerDate[i][f]["Resultado (log)"];
+        }
+    }
+
+    return resultLogPerDate;
+
+}
+function groupByDateArray(){
+    
+    let days = getDays();
+    let same = [];
+    let dataPerDate = [];
+    let resultLogPerDate = [];
+
+    for(let i = 0; i<days.length; i++){
+    
+        for(let f = 0; f<data[0].length; f++){
+    
+            if(days[i] == data[0][f].Fecha.getTime()){
+    
+                same.push(data[0][f]);
+    
+            }
+    
+        }
+
+        dataPerDate[i] = same;
+        same = [];
+    
+    }
+    for(let i = 0; i<dataPerDate.length; i++){
+        resultLogPerDate[i] = {
+            data: [],
+            date: dataPerDate[i][0].Fecha,
+            length: dataPerDate[i].length
+        };
+        for(let f = 0; f<dataPerDate[i].length; f++){
+            resultLogPerDate[i].data.push(dataPerDate[i][f]["Resultado (log)"]);
         }
     }
 
@@ -986,15 +1095,22 @@ function stepRep(){
 let markers = null;
 
 function changeView(view){
-    if(chart!=null)
+    
+    if(chart!=null){
         chart.destroy();
+        chart = null;
+    }
+
+    fechaBtn.classList.remove("btn-actived");
+    sectorBtn.classList.add("btn-actived");
+
     if(currentView != view){
         
         sectorMax.innerHTML = "";
         sectorMin.innerHTML = "";
         sectorAvg.innerHTML = "";
         sectorMedian.innerHTML = "";
-        sectorVariance.innerHTML = "";
+        sectorTD.innerHTML = "";
         sectorId.innerHTML = "";
         sectorLocation.innerHTML = "";
 
@@ -1022,10 +1138,12 @@ function changeView(view){
             setViewTo(latitudeDefault, longitudeDefault, zoomDefault);
             displaySectorStats(false);
             hideTimeLine(true);
+            displayBtnBoxplot(false);
             break;
 
         case 2: 
             document.getElementById("sector-data").classList.remove("hide");
+            displayBtnBoxplot(true);
             if(markers == null){
                 let iconsLayers = [];
                 layers.eachLayer((layer)=>{
@@ -1045,11 +1163,16 @@ function changeView(view){
             break;
         case 3: 
             stopRep();
-            if(markers != null){
-                markers.eachLayer((icon)=>{
-                    icon.remove();
+            displayBtnBoxplot(false);
+            if(markers == null){
+                let iconsLayers = [];
+                layers.eachLayer((layer)=>{
+                    let icon = L.divIcon({className: "sectorsId", html: layer.feature.id});  
+                    let layerIcon = L.marker(layer.getCenter(), {icon:icon});
+                    layerIcon.addTo(mymap);
+                    iconsLayers.push(layerIcon);
                 });
-                markers = null;
+                markers = new L.layerGroup(iconsLayers);
             }
             let counterColor = 0;
             layers.eachLayer((layer)=>{
@@ -1113,6 +1236,7 @@ function getSectorsData(){
 }
 
 //-----------------------------------Chart method
+
 var colorArray = [
     '#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
     '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -1143,4 +1267,122 @@ function removeDataToChart(id){
     });
     chart.update();
 
+}
+function displayBtnBoxplot(boolean){
+
+    if(boolean){
+        btnBoxplot.classList.remove("hide");
+    }else{
+        btnBoxplot.classList.add("hide");
+    }
+
+}
+
+function changeBoxplot(e){
+    
+    if(chart!=null){
+        chart.destroy();
+        chart = null;
+    }
+    e.target.classList.add("btn-actived");
+    if(e.target == fechaBtn){
+
+        sectorBtn.classList.remove("btn-actived");
+        dataPerDate = [];
+        dataPerDate = groupByDateArray().map((e)=>{
+            return e.data;
+        });
+        let dates = getDays().map((e)=>{ return new Date(e)});
+        if(currentView == 2){
+
+            chart = new Chart(ctx, {
+            type: 'boxplot',
+            data: {
+                // define label tree
+                labels: dates.map(date => new Intl.DateTimeFormat('es-SP', {month:'short', day:'numeric'}).format(date)),
+                datasets: [{
+                label: 'UG/L',
+                backgroundColor: "#4287f5",
+                borderColor: "#1a335c",
+                borderWidth: 1,
+                outlierColor: '#999999',
+                padding: 10,
+                itemRadius: 0,
+                data: dataPerDate
+                }]
+            },
+            options: {
+                legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 20,
+                    boxWidth: 15,
+                    fontFamily: 'sans-serif',
+                    fontColor: 'black'
+                }
+                },
+                title: {
+                    display: true,
+                    text: "Registro de RNV viral (SARS-Cov2019) aguas General (Log)",
+                    fontSize: 20,
+                    padding: 30
+                }
+            }
+            });
+
+            
+            results = data[0].map((e)=>{
+                return e.Resultado;
+            });
+            sectorMax.innerHTML = "Maximo: "+ Math.max.apply(Math, results) +" UG/L";
+            sectorMin.innerHTML = "Minimo: "+ Math.min.apply(Math, results) +" UG/L";
+            sectorLocation.innerHTML = "Estadísticos Muestrales";
+            sectorAvg.innerHTML = "Media: "+ getAvg(results).toFixed(3) +" UG/L";
+            sectorMedian.innerHTML = "Mediana: "+ getMedian(results) +" UG/L";
+            sectorTD.innerHTML = "Desviación típica: "+ getTD(results).toFixed(3) + " UG/L";
+            sectorQ1.innerHTML = "Q1: "+ getQ1(results).toFixed(3) + " UG/L";
+            sectorQ3.innerHTML = "Q3: "+ getQ3(results).toFixed(3) + " UG/L";
+        }
+    }else{
+
+        fechaBtn.classList.remove("btn-actived");
+        if(currentView == 2){
+
+            chart = new Chart(ctx, {
+            type: 'boxplot',
+            data: {
+                // define label tree
+                labels: getSectorsId(),
+                datasets: [{
+                label: 'UG/L',
+                backgroundColor: "#4287f5",
+                borderColor: "#1a335c",
+                borderWidth: 1,
+                outlierColor: '#999999',
+                padding: 10,
+                itemRadius: 0,
+                data: getSectorsData()
+                }]
+            },
+            options: {
+                legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 20,
+                    boxWidth: 15,
+                    fontFamily: 'sans-serif',
+                    fontColor: 'black'
+                }
+                },
+                title: {
+                    display: true,
+                    text: "Registro de RNV viral (SARS-Cov2019) aguas General (Log)",
+                    fontSize: 20,
+                    padding: 30
+                }
+            }
+            });
+
+        }
+    }
 }

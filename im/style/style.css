@@ -58,7 +58,8 @@ sector stats styles
 
 #sector-data{
     width: 90%;
-    padding: 1em;
+    padding: 0.1em;
+    max-height: 50%;
     border-radius: 25px;
     overflow-y: scroll;
     border: solid gray 2px;
@@ -206,7 +207,7 @@ p:hover {
 .sectorsId {
     background-color: none ;
     font-family: sans-serif;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 0.8em;
 }
@@ -220,4 +221,35 @@ p:hover {
     justify-content: center;
     align-items: center;
     z-index: 4;
+}
+#btn-boxplot {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    background: none;
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 10em;
+    border: 0.2em solid #4287f5;
+    padding: 1em;
+}
+
+button:hover {
+    color: white;
+    background: #4287f5;
+}
+
+.btn-actived {
+
+    background: #4287f5;
+    color: white;
+
 }

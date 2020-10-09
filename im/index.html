@@ -21,6 +21,10 @@
     <img src="img/icons/close.svg" alt="close-botton" id="close-botton">
     <div id="sector-stats" class="hide-stats">
       <canvas id="chart"></canvas>
+      <div id="btn-boxplot" class="hide">
+        <button id="sector-btn" class="btn-actived">SECTORES</button>
+        <button id="fecha-btn">FECHA</button>
+      </div>
       <div id="sector-data">
         <p id="sector-location"></p>
         <p id="sector-id">ID: </p>
@@ -28,7 +32,9 @@
         <p id="sector-median">Mediana: </p>
         <p id="sector-max">Maximo: </p>
         <p id="sector-min">Minimo: </p>
-        <p id="sector-variance">Varianza: </p>
+        <p id="sector-td">Desviación Típica: </p>
+        <p id="sector-q1">Q1: </p>
+        <p id="sector-q3">Q3: </p>
       </div>
     </div>
     <div id="repro-container">
