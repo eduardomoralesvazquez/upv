@@ -158,6 +158,7 @@ body {
 #repro-controls {
     display: flex;
     align-items: center;
+    padding: 1em;
 }
 #repro-date {
 
@@ -177,32 +178,37 @@ body {
 #views {
     position: fixed;
     z-index: 2;
-    right: 1em;
-    top: 10em;
+    right: 7em;
+    top: 7em;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     display: flex;
-    color:white;
-    border:solid 2px black;
-    border-radius: 25px;
+    color:black;
+    border-radius: 10px;
     cursor: pointer;
-    background-color: black;
+    background-color: white;
     font-family: sans-serif;
     font-weight: bold;
 }
 #views p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0.5em;
     padding: 1em;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 p:hover {
-    color:black;
-    background-color: white;
+    border-radius: 10px ;
+    box-shadow: 0 0 3px grey;
 }
 .actived {
+
     cursor:auto !important;
-    background-color: #4287f5 !important;
-    color: black;
+    border-radius: 10px ;
+    box-shadow: 0 0 3px grey;
 }
 .sectorsId {
     background-color: none ;
@@ -251,5 +257,96 @@ button:hover {
 
     background: #4287f5;
     color: white;
+    border-radius: 10px ;
+    box-shadow: 0 0 3px grey;
 
+}
+
+#legend {
+
+    height: 20em;
+    width: 10em;
+    position: fixed;
+    right: 2em;
+    top: 35em;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#legend-values {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    color: white;
+    font-family: sans-serif;
+    width: 80%;
+
+}
+
+#legend-bar {
+
+    border: solid white 1px;
+    width: 10%; background: rgb(255,0,0);
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,255,0,1) 50%, rgba(0,255,0,1) 100%); 
+
+}
+
+
+.dark-market {
+    
+    background-color: black !important;
+    border-top-left-radius: 25px !important;
+    border-top-Right-radius: 25px !important;
+
+}
+
+
+#tiles-selector {
+    position: fixed;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    top: 7em;
+    right: 1em;
+    z-index: 3;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#tiles-selector img{
+
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+
+}
+#tiles-selector div{
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    margin: 0.1em;
+
+}
+
+#tiles-selector div:hover{
+    border-radius: 10px ;
+    box-shadow: 0 0 3px grey;
+    
+}
+
+.black-font {
+    color: black !important;
 }

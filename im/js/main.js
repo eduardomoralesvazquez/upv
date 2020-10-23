@@ -10,9 +10,13 @@ const mobile = mobileCheck();
 
 const closeBtn = document.getElementById("close-botton");
 const sectorStats = document.getElementById("sector-stats");
-const view1 = document.getElementById("view-1")
-const view2 = document.getElementById("view-2")
-const view3 = document.getElementById("view-3")
+const view1 = document.getElementById("view-1");
+const view2 = document.getElementById("view-2");
+const view3 = document.getElementById("view-3");
+const tile1 = document.getElementById("tiles-1");
+const tile2 = document.getElementById("tiles-2");
+const tile3 = document.getElementById("tiles-3");
+const tile4 = document.getElementById("tiles-4");
 
 //Stats
 
@@ -29,6 +33,12 @@ let ctx = document.getElementById("chart").getContext("2d");
 let btnBoxplot = document.getElementById("btn-boxplot");
 let sectorBtn = document.getElementById("sector-btn");
 let fechaBtn = document.getElementById("fecha-btn");
+let legend = document.getElementById("legend");
+let legendMax = document.getElementById("legend-values-max");
+let legendMid = document.getElementById("legend-values-mid");
+let legendMin = document.getElementById("legend-values-min");
+let reproControls = document.getElementById("repro-controls");
+
 
 sectorBtn.addEventListener("click", (e)=>{changeBoxplot(e)})
 fechaBtn.addEventListener("click", (e)=>{changeBoxplot(e)})
@@ -63,6 +73,41 @@ if(mobile){
 }
 
 const mymap = L.map("mapid").setView([latitudeDefault, longitudeDefault], zoomDefault);
+//----------------------------tiles
+
+let tiles = [];
+tiles.push(L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+}));
+tiles.push(L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}));
+tiles.push( L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+}));
+tiles.push(L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+	maxZoom: 20,
+	attribution: '&copy; Openstreetmap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}));
+
+let currentTile = 1;
+
+mymap.addLayer(tiles[currentTile-1]);
+
+var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
+
+  var results = L.layerGroup().addTo(mymap);
+
+  searchControl.on('results', function (data) {
+    results.clearLayers();
+    for (var i = data.results.length - 1; i >= 0; i--) {
+      results.addLayer(L.marker(data.results[i].latlng));
+    }
+  });
 
 //controls events
 
@@ -80,15 +125,12 @@ closeBtn.addEventListener("click", ()=>{
 
 });
 
+
+
 view1.addEventListener("click", ()=>{ changeView(1)});
 view2.addEventListener("click", ()=>{ changeView(2)});
 view3.addEventListener("click", ()=>{ changeView(3)});
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-}).addTo(mymap);
 
 
 //Get Json data
@@ -124,6 +166,8 @@ requestJson.onreadystatechange = function(){
                 }
             }
         });
+        legendMax.innerHTML = maxResul.Resultado;
+        legendMid.innerHTML = Math.ceil(maxResul.Resultado/2);
         drawTimeLine();
 
     }
@@ -1134,6 +1178,7 @@ function changeView(view){
                     fillOpacity: 0.7
                 });
             });
+            displayLegend(true);
             changeMapColor("rgb(0,255,0)");
             setViewTo(latitudeDefault, longitudeDefault, zoomDefault);
             displaySectorStats(false);
@@ -1143,6 +1188,7 @@ function changeView(view){
 
         case 2: 
             document.getElementById("sector-data").classList.remove("hide");
+            displayLegend(false);
             displayBtnBoxplot(true);
             if(markers == null){
                 let iconsLayers = [];
@@ -1163,6 +1209,7 @@ function changeView(view){
             break;
         case 3: 
             stopRep();
+            displayLegend(false);
             displayBtnBoxplot(false);
             if(markers == null){
                 let iconsLayers = [];
@@ -1238,11 +1285,11 @@ function getSectorsData(){
 //-----------------------------------Chart method
 
 var colorArray = [
-    '#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
-    '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
-    '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
-    '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
-    '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+    '#46873A', '#943849', '#50528A', '#7BF556', '#A33CA3', 
+    '#ED5FB2', '#4BBD51', '#55809E', '#E38B59', '#518BDB',
+    '#B5F283', '#EB5774', '#EB5EF7', '#55A194', '#805D2F',
+    '#A16795', '#FACC8C', '#593AA6', '#C98681', '#83F2C0',
+    '#86DDF7', '#C288F7', '#A8AD49', '#B33300', '#CC80CC', 
     '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
     '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
     '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
@@ -1384,5 +1431,53 @@ function changeBoxplot(e){
             });
 
         }
+    }
+}
+function displayLegend(boolean){
+
+    if(boolean){
+
+        legend.classList.remove("hide");
+
+    }else{
+
+        legend.classList.add("hide");
+
+    }
+
+}
+
+//------------------------------------------------Tiles
+
+tile1.addEventListener("click", (e)=>{ changeTile(e)});
+tile2.addEventListener("click", (e)=>{ changeTile(e)});
+tile3.addEventListener("click", (e)=>{ changeTile(e)});
+tile4.addEventListener("click", (e)=>{ changeTile(e)});
+
+function changeTile(e){
+    console.log(tiles[e.target.innerHTML-1]);
+    if(currentTile-1 != e.target.innerHTML-1){
+
+        [tile1, tile2, tile3, tile4].map((element)=>{element.classList.remove("actived")});
+        e.target.classList.add("actived");
+        mymap.removeLayer(tiles[currentTile-1]);
+        mymap.addLayer(tiles[e.target.innerHTML-1]);
+        currentTile = e.target.innerHTML;
+
+    }
+    if(currentTile != 1){
+
+        legendMax.classList.add("black-font");
+        legendMin.classList.add("black-font");
+        legendMid.classList.add("black-font");
+        reproControls.classList.add("dark-market");
+
+    }else{
+
+        legendMax.classList.remove("black-font");
+        legendMin.classList.remove("black-font");
+        legendMid.classList.remove("black-font");
+        reproControls.classList.remove("dark-market");
+
     }
 }

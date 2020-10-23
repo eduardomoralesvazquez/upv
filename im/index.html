@@ -7,6 +7,10 @@
     href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" 
     crossorigin=""/>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"
+    />
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
@@ -18,7 +22,22 @@
       <p id="view-2">GENERAL</p>
       <p id="view-3">COMPARAR</p>
     </div>
-    <img src="img/icons/close.svg" alt="close-botton" id="close-botton">
+    <img src="img/icons/close.svg"  id="close-botton">
+    <div id="legend">
+      <div id="legend-values">
+        <div id="legend-values-max">10</div>
+        <div id="legend-values-mid">5</div>
+        <div id="legend-values-min">0</div>
+      </div>
+      <div id="legend-bar"></div>
+    </div>
+    <div id="tiles-selector">
+      <img src="/img/icons/layer.svg">
+      <div id="tiles-1" class="actived">1</div>
+      <div id="tiles-2">2</div>
+      <div id="tiles-3">3</div>
+      <div id="tiles-4">4</div>
+    </div>
     <div id="sector-stats" class="hide-stats">
       <canvas id="chart"></canvas>
       <div id="btn-boxplot" class="hide">
@@ -39,11 +58,11 @@
     </div>
     <div id="repro-container">
       <div id="repro-controls">
-          <img src="./img/icons/reverse.svg" id="reverse" alt="">
-          <img src="./img/icons/pause.svg" class="hide" id="pause" alt="">
-          <img src="./img/icons/play.svg" id="play"alt="">
-          <img src="./img/icons/stop.svg" id="stop" alt="">
-          <img src="./img/icons/step.svg" id="step" alt="">
+          <img src="./img/icons/reverse.svg" id="reverse">
+          <img src="./img/icons/pause.svg" class="hide" id="pause">
+          <img src="./img/icons/play.svg" id="play">
+          <img src="./img/icons/stop.svg" id="stop">
+          <img src="./img/icons/step.svg" id="step">
           <select id="speedTime">
             <option value="15">x0.25</option>
             <option value="10" selected>x1</option>
@@ -61,11 +80,21 @@
     <!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>    
     <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot@2.3.0/build/Chart.BoxPlot.min.js"></script>
-
     <script 
     src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
+    <!-- Esri search plugin-->
+    <script src="https://unpkg.com/esri-leaflet@2.5.1/dist/esri-leaflet.js"
+    integrity="sha512-q7X96AASUF0hol5Ih7AeZpRF6smJS55lcvy+GLWzJfZN+31/BQ8cgNx2FGF+IQSA4z2jHwB20vml+drmooqzzQ=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+    crossorigin="">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+    crossorigin=""></script>
+    <!-- Main js-->
     <script src="js/main.js"></script>
   </body>
 </html>
